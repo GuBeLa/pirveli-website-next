@@ -28,7 +28,7 @@ body {
   left: 0;
   z-index: 999;
   padding: 0 12.1875rem;
-  background: #edeeef;
+  /* background: #edeeef; */
 }
 
 /* navigation */
@@ -45,7 +45,7 @@ body {
 }
 
 .sign {
-  width: 10.5rem;
+  width: 8rem;
   height: 2.625rem;
   background: #db0060;
   border-radius: 0.75rem;

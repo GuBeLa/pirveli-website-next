@@ -1,10 +1,35 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRef } from 'react';
 import { NextPageWithLayout } from './page';
-// import '../styles/Home.module.css';
 
 const Home: NextPageWithLayout = () => {
+  const ref = useRef<HTMLDivElement>('');
+  const linkRef = useRef<any>();
+
+  const changeColor = (color: string, icon: string) => {
+    ref.current.style.cssText = `
+      background: ${color}; 
+      height: 10.3125rem;
+    `;
+
+    // linkRef!.current.style.cssText = `
+    //   opacity: 0.6
+    // `;
+  }
+
+  const removeColor = (color: string) => {
+    ref.current.style.cssText = `
+      background: ${color}; 
+      height: 0;
+    `;
+
+    // linkRef.current.style.cssText = `
+    //   opacity: 1;
+    // `;
+  }
+
   return (
     <>
       <Head>
@@ -71,31 +96,47 @@ const Home: NextPageWithLayout = () => {
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
           >
-            <h2>დააგროვე და გადაცვალე მონეტები</h2>
+            <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
             <Link href="#">დაწყება</Link>
           </article>
 
           <article
+            ref={ref}
             className="category"
             data-aos="fade-down-right"
             data-aos-duration="1500"
           >
             <ul>
               <li>
-                <Link className='test-hover' target='_blank' href="https://optimoml.geopay.ge/index.php">მაღაზია</Link>
+                <Link ref={linkRef} onMouseLeave={() => removeColor("rgba(93, 176, 57, 0)")} onMouseEnter={() => changeColor("rgba(93, 176, 57, 1)", "")} target='_blank' href="https://optimoml.geopay.ge/index.php">
+                  მაღაზია
+                  <Image src={'/svg/shop.svg'} width={226} height={226} alt='' />
+                </Link>
               </li>
               <li>
-                <Link target='_blank' href="https://medical.pirveli.ge">მედიქალი</Link>
+                <Link onMouseLeave={() => removeColor("rgba(255, 187, 182, 0)")} onMouseEnter={() => changeColor("rgba(255, 187, 182, 1)", "")} target='_blank' href="https://medical.pirveli.ge">
+                  მედიქალი
+                  <Image src={'/svg/medical.svg'} width={226} height={226} alt='' />
+                </Link>
               </li>
               <li>
-                <Link target='_blank' href="https://vouchers.pirveli.ge">ვაუჩერი</Link>
+                <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.ge">
+                  ვაუჩერი
+                  <Image src={'/svg/vaucher.svg'} width={226} height={226} alt='' />
+                </Link>
               </li>
               <li>
-                <Link target='_blank' href="https://lotto.pirveli.ge/">გათამაშება</Link>
+                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lotto.pirveli.ge/">
+                  გათამაშება
+                  <Image src={'/svg/gatamasheba.svg'} width={226} height={226} alt='' />
+                </Link>
               </li>
               <li>
-                <Link target='_blank' href="#">თამაშები</Link>
+                <Link onMouseLeave={() => removeColor("rgba(237, 197, 32, 0)")} onMouseEnter={() => changeColor("rgba(237, 197, 32, 1)", "")} target='_blank' href="#">
+                  თამაშები
+                  <Image src={'/svg/games.svg'} width={226} height={226} alt='' />
+                </Link>
               </li>
             </ul>
           </article>
@@ -202,19 +243,19 @@ const Home: NextPageWithLayout = () => {
               <div className="text_item">
                 <h2>01</h2>
                 <p>
-                დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
+                  დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
                 </p>
               </div>
               <div className="text_item">
                 <h2>02</h2>
                 <p>
-                დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
+                  დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
                 </p>
               </div>
               <div className="text_item">
                 <h2>03</h2>
                 <p>
-                ყოველ 100 მონეტაზე იღებ ფულადი პრიზების მოგების 5 შანსს. სამ დღეში ერთხელ - დღიური საპრიზო ფონდით - 10 000ლ. დიდი გათამაშება - საწყისი საპრიზო ფონდით - 300 000ლ.
+                  ყოველ 100 მონეტაზე იღებ ფულადი პრიზების მოგების 5 შანსს. სამ დღეში ერთხელ - დღიური საპრიზო ფონდით - 10 000ლ. დიდი გათამაშება - საწყისი საპრიზო ფონდით - 300 000ლ.
                 </p>
               </div>
             </div>

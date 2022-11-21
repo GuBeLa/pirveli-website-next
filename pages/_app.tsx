@@ -1,6 +1,5 @@
 import '../styles/root.css';
 import '../styles/globals.css';
-import '../styles/home.module.css';
 import type { AppProps } from 'next/app';
 import { NextPageWithLayout } from './page';
 

@@ -25,7 +25,7 @@ const Home: NextPageWithLayout = () => {
             <Image width={175} height={50} src="/svg/logo.svg" alt="" />
           </Link>
 
-          <nav className='nav'>
+          {/* <nav className='nav'>
             <ul>
               <li>
                 <Link href="#" target="_blank">
@@ -53,10 +53,10 @@ const Home: NextPageWithLayout = () => {
                 </Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
 
           <Link href="#" className="sign">
-            Sign In
+            შესვლა
           </Link>
         </header>
         <section className="section main">
@@ -71,13 +71,9 @@ const Home: NextPageWithLayout = () => {
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
           >
-            <h2>Join the race for points</h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industrys standard dummy text
-              ever since the 1500s
-            </p>
-            <Link href="#">Join Now</Link>
+            <h2>დააგროვე და გადაცვალე მონეტები</h2>
+            <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
+            <Link href="#">დაწყება</Link>
           </article>
 
           <article
@@ -87,19 +83,19 @@ const Home: NextPageWithLayout = () => {
           >
             <ul>
               <li>
-                <Link href="#">E-commerce</Link>
+                <Link className='test-hover' href="#">მაღაზია</Link>
               </li>
               <li>
-                <Link href="#">Medical</Link>
+                <Link href="#">მედიქალი</Link>
               </li>
               <li>
-                <Link href="#">Voucher</Link>
+                <Link href="#">ვაუჩერი</Link>
               </li>
               <li>
-                <Link href="#">Raffles</Link>
+                <Link href="#">გათამაშება</Link>
               </li>
               <li>
-                <Link href="#">Games</Link>
+                <Link href="#">თამაშები</Link>
               </li>
             </ul>
           </article>
@@ -109,7 +105,7 @@ const Home: NextPageWithLayout = () => {
           </Link> */}
         </section>
 
-        <section className="section about">
+        {/* <section className="section about">
           <div className="wrapper">
             <article className="img">
               <Image width={520} height={563} src="/svg/about.svg" alt="" />
@@ -149,9 +145,9 @@ const Home: NextPageWithLayout = () => {
               </Link>
             </article>
           </div>
-        </section>
+        </section> */}
 
-        <section className="section why">
+        {/* <section className="section why">
           <h2>Why Our Company</h2>
           <div className="content">
             <div className="item">
@@ -194,34 +190,31 @@ const Home: NextPageWithLayout = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="section step">
           <div className="text_list">
-            <h2>Get it done</h2>
+            <h2>ლოიალურობაზე დაფუძნებული</h2>
             <p>
-              In <span>3 easy step</span>
+              <span>ლოიალურობაზე დაფუძნებული</span>
             </p>
             <div className="text_outer">
               <div className="text_item">
                 <h2>01</h2>
                 <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
+                დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
                 </p>
               </div>
               <div className="text_item">
                 <h2>02</h2>
                 <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
+                დაგროვებულ მონეტებს ცვლი ფასდაკლებების ვაუჩერებსა და კატალოგში მოცემულ შერჩეულ პროდუქტებში.
                 </p>
               </div>
               <div className="text_item">
                 <h2>03</h2>
                 <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
+                ყოველ 100 მონეტაზე იღებ ფულადი პრიზების მოგების 5 შანსს. სამ დღეში ერთხელ - დღიური საპრიზო ფონდით - 10 000ლ. დიდი გათამაშება - საწყისი საპრიზო ფონდით - 300 000ლ.
                 </p>
               </div>
             </div>
@@ -229,18 +222,18 @@ const Home: NextPageWithLayout = () => {
 
           <div className="video_content">
             <div className="video">
-              <Image width={100} height={100} src="/svg/play.svg" alt="" />
+              <Image width={876} height={532} src="/svg/play.svg" alt="" />
             </div>
 
             <div className="play_content">
-              <Image width={83} height={32} src="/svg/Vector.svg" alt="" />
-              <h2>Play Video</h2>
-              <p>for more information</p>
+              <Image width={53} height={71} src="/svg/Vector.svg" alt="" />
+              <h2>გაიცანი Pirveli</h2>
+              <p>ვიდეო მეტი ინფორმაციისთვის</p>
             </div>
           </div>
         </section>
 
-        <section className="section footer">
+        {/* <section className="section footer">
           <div className="container">
             <div className="text_content">
               <h2>Footer Name</h2>
@@ -284,7 +277,7 @@ const Home: NextPageWithLayout = () => {
             </div>
           </div>
           <p>Copyright © 2022 our website. All rights reserved.</p>
-        </section>
+        </section> */}
       </main>
     </>
   );

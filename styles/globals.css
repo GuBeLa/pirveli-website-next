@@ -45,10 +45,10 @@ body {
 }
 
 .sign {
-  width: 9.25rem;
-  height: 3rem;
+  width: 10.5rem;
+  height: 2.625rem;
   background: #db0060;
-  border-radius: 0.25rem 1rem;
+  border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,22 +129,21 @@ body {
 }
 
 .section.main > .info > a {
-  width: 12.3125rem;
-  height: 3.375rem;
-  background: #db0060;
-  border-radius: 0.25rem 1rem;
+  width: 13.125rem;
+  height: 3.75rem;
+  background: #BA0059;
+  border-radius: 0.75rem;
   font-weight: 700;
   font-size: 1rem;
-  line-height: 1.125rem;
+  line-height: 3.75rem;
   text-align: center;
-  line-height: 3.375rem;
   color: #ffffff;
   text-decoration: none;
 }
 
 .section.main > .category {
   width: 100%;
-  /* height: 10.3125rem; */
+  /* height: 6.25rem; */
   padding: 0 12.1875rem;
   display: flex;
   align-items: center;
@@ -186,9 +185,13 @@ body {
   color: #ffffff;
 }
 
+.section.main > .category li a:hover img.ruffles {
+  transform: translate(-50%, -78%);
+}
+
 .section.main > .category li a:hover img {
   opacity: 1;
-  transform: translate(-50%, -67%);
+  transform: translate(-50%, -72%);
 }
 
 .scroll_down {

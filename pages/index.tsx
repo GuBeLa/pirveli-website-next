@@ -11,7 +11,7 @@ const Home: NextPageWithLayout = () => {
   const changeColor = (color: string, icon: string) => {
     ref.current.style.cssText = `
       background: ${color}; 
-      height: 10.3125rem;
+      height: 6.25rem;
     `;
 
     // linkRef!.current.style.cssText = `
@@ -22,7 +22,7 @@ const Home: NextPageWithLayout = () => {
   const removeColor = (color: string) => {
     ref.current.style.cssText = `
       background: ${color}; 
-      height: 0;
+      height: 6.25rem;
     `;
 
     // linkRef.current.style.cssText = `
@@ -111,31 +111,31 @@ const Home: NextPageWithLayout = () => {
               <li>
                 <Link ref={linkRef} onMouseLeave={() => removeColor("rgba(93, 176, 57, 0)")} onMouseEnter={() => changeColor("rgba(93, 176, 57, 1)", "")} target='_blank' href="https://optimoml.geopay.ge/index.php">
                   მაღაზია
-                  <Image src={'/svg/shop.svg'} width={226} height={226} alt='' />
+                  <Image src={'/svg/shop.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(255, 187, 182, 0)")} onMouseEnter={() => changeColor("rgba(255, 187, 182, 1)", "")} target='_blank' href="https://medical.pirveli.ge">
                   მედიქალი
-                  <Image src={'/svg/medical.svg'} width={226} height={226} alt='' />
+                  <Image src={'/svg/Med.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.ge">
                   ვაუჩერი
-                  <Image src={'/svg/vaucher.svg'} width={226} height={226} alt='' />
+                  <Image src={'/svg/Voucher.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lotto.pirveli.ge/">
                   გათამაშება
-                  <Image src={'/svg/gatamasheba.svg'} width={226} height={226} alt='' />
+                  <Image className='ruffles' src={'/svg/Raffles.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(237, 197, 32, 0)")} onMouseEnter={() => changeColor("rgba(237, 197, 32, 1)", "")} target='_blank' href="#">
                   თამაშები
-                  <Image src={'/svg/games.svg'} width={226} height={226} alt='' />
+                  <Image src={'/svg/game.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
             </ul>

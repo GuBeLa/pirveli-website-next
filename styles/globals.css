@@ -342,6 +342,18 @@ body {
   padding: 8.125rem 12.1875rem 11.5rem 12.1875rem;
 }
 
+.section.step::after {
+  content: '';
+  background-image: url('/svg/swallow.svg');
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -10.3125rem;
+  width: 63.75rem;
+  height: 64rem;
+  z-index: -1;
+}
+
 .section.step > .text_list {
   width: 40.625rem;
 }

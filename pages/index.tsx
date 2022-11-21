@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
-  const ref = useRef<HTMLDivElement>('');
+  const ref = useRef<any>();
   const linkRef = useRef<any>();
 
   const changeColor = (color: string, icon: string) => {

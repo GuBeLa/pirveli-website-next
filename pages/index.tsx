@@ -83,19 +83,19 @@ const Home: NextPageWithLayout = () => {
           >
             <ul>
               <li>
-                <Link className='test-hover' href="#">მაღაზია</Link>
+                <Link className='test-hover' target='_blank' href="https://optimoml.geopay.ge/index.php">მაღაზია</Link>
               </li>
               <li>
-                <Link href="#">მედიქალი</Link>
+                <Link target='_blank' href="https://medical.pirveli.ge">მედიქალი</Link>
               </li>
               <li>
-                <Link href="#">ვაუჩერი</Link>
+                <Link target='_blank' href="https://vouchers.pirveli.ge">ვაუჩერი</Link>
               </li>
               <li>
-                <Link href="#">გათამაშება</Link>
+                <Link target='_blank' href="https://lotto.pirveli.ge/">გათამაშება</Link>
               </li>
               <li>
-                <Link href="#">თამაშები</Link>
+                <Link target='_blank' href="#">თამაშები</Link>
               </li>
             </ul>
           </article>

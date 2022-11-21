@@ -167,7 +167,7 @@ body {
   text-decoration: none;
 }
 
-li:hover ~ body .category {
+.test-hover:hover + .category {
   background: red;
 }
 

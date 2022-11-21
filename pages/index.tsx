@@ -98,7 +98,7 @@ const Home: NextPageWithLayout = () => {
           >
             <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
-            <Link href="#">დაწყება</Link>
+            <Link href="https://auth.pirveli.ge/realms/xracoon-demo/login-actions/registration?client_id=demo-client&tab_id=ngFcMjfRc0o">დაწყება</Link>
           </article>
 
           <article

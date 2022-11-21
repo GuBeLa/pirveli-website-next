@@ -80,7 +80,7 @@ const Home: NextPageWithLayout = () => {
             </ul>
           </nav> */}
 
-          <Link href="#" className="sign">
+          <Link href="https://auth.pirveli.ge/realms/xracoon-demo/protocol/openid-connect/auth?response_type=code&client_id=demo-client&scope=email%20profile%20roles%20openid&state=ozej6dlmtIpneeVt7QoGPy2zXJ9e6BNPdGltyKyn3X4%3D&redirect_uri=https://pirveli.pirveli.ge&nonce=KAmXCp0jHrPiUph9D2p5yVwdpT5g3qWO0iCxqJFbiv0" className="sign">
             შესვლა
           </Link>
         </header>

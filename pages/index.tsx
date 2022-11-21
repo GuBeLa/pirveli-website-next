@@ -127,7 +127,7 @@ const Home: NextPageWithLayout = () => {
                 </Link>
               </li>
               <li>
-                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lotto.pirveli.ge/">
+                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lot51.pirveli.ge">
                   გათამაშება
                   <Image className='ruffles' src={'/svg/Raffles.png'} width={226} height={226} alt='' />
                 </Link>

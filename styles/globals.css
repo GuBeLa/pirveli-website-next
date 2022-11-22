@@ -78,6 +78,7 @@ body {
 .section.main {
   position: relative;
   justify-content: center;
+  margin-bottom: 150px;
   /* gap: 5.625rem; */
 }
 

@@ -214,13 +214,9 @@ body {
   color: #ffffff;
 }
 
-.section.main > .category li a:hover img.ruffles {
-  transform: translate(-50%, -78%);
-}
-
 .section.main > .category li a:hover img {
   opacity: 1;
-  transform: translate(-50%, -72%);
+  transform: translate(-50%, -75%);
 }
 
 .scroll_down {

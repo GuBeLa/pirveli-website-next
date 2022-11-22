@@ -157,31 +157,31 @@ const Home = () => {
               <li>
                 <Link ref={linkRef} onMouseLeave={() => removeColor("rgba(93, 176, 57, 0)")} onMouseEnter={() => changeColor("rgba(93, 176, 57, 1)", "")} target='_blank' href="https://optimoml.geopay.ge/index.php">
                   მაღაზია
-                  <Image src={'/svg/shop.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/shop-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(255, 187, 182, 0)")} onMouseEnter={() => changeColor("rgba(255, 187, 182, 1)", "")} target='_blank' href="https://medical.pirveli.ge">
                   მედიქალი
-                  <Image src={'/svg/Med.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/med-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.ge">
                   ვაუჩერი
-                  <Image src={'/svg/Voucher.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/main-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lot51.pirveli.ge">
                   გათამაშება
-                  <Image className='ruffles' src={'/svg/Raffles.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/jackpot-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(237, 197, 32, 0)")} onMouseEnter={() => changeColor("rgba(237, 197, 32, 1)", "")} target='_blank' href="#">
                   თამაშები
-                  <Image src={'/svg/game.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/game-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
             </ul>

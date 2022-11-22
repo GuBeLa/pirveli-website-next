@@ -144,7 +144,7 @@ const Home = () => {
           >
             <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
-            <Link href="https://auth.pirveli.ge/realms/xracoon-demo/login-actions/registration?client_id=demo-client&tab_id=r9zbSVvQZMQ">დაწყება</Link>
+            <Link href="https://auth.pirveli.ge/realms/xracoon-demo/login-actions/registration?client_id=demo-client&tab_id=DHhl4MXtCuk">დაწყება</Link>
           </article>
 
           <article

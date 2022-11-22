@@ -1,14 +1,60 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRef } from 'react';
-import { NextPageWithLayout } from './page';
+import { useEffect, useRef } from 'react';
+import { animate, scroll, inView } from "motion";
 
-const Home: NextPageWithLayout = () => {
-  const ref = useRef<any>();
-  const linkRef = useRef<any>();
+const Home = () => {
+  const ref = useRef();
+  const linkRef = useRef();
 
-  const changeColor = (color: string, icon: string) => {
+  inView(".step", () => {
+    console.log("Element has entered the viewport")
+  })
+  
+
+  useEffect(() => {
+
+    document.querySelectorAll("section > div").forEach((item) => {
+      scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+        target: item,
+        offset: ["start end", "end end", "start start", "end start"]
+      });
+    });
+
+    document.querySelectorAll(".main").forEach((section) => {
+      let article = section.querySelectorAll("article")[0];
+        scroll(animate(article, { 
+          y: ["-500px", "500px"],
+        }), {
+        target: article
+      });
+
+      let category = section.querySelector(".category");
+      scroll(animate(category, { opacity: 0, scale: "0", y: "-100vh" }, { easing: "ease-in" }))
+
+      let anim1 = section.querySelector(".anim1");
+        scroll(animate(anim1, { 
+          x: [1000, 0],
+          y: [-1000, 0],
+        }), {
+        target: anim1
+      });
+
+      let anim2 = section.querySelector(".anim2");
+        scroll(animate(anim2, { 
+          x: [1000, 0],
+        }), {
+        target: anim2
+      });
+    });
+
+    document.querySelectorAll(".step").forEach((section) => {
+      scroll(animate(section, { opacity: 1, y: ["-50vh", "0"] }, { easing: "ease-in" }))
+    });
+  }, [])
+
+  const changeColor = (color, icon) => {
     ref.current.style.cssText = `
       background: ${color}; 
       height: 6.25rem;
@@ -19,7 +65,7 @@ const Home: NextPageWithLayout = () => {
     // `;
   }
 
-  const removeColor = (color: string) => {
+  const removeColor = (color) => {
     ref.current.style.cssText = `
       background: ${color}; 
       height: 6.25rem;
@@ -144,6 +190,8 @@ const Home: NextPageWithLayout = () => {
           {/* <Link href="#" className="scroll_down">
             <Image width={140} height={140} src="/svg/scroll.svg" alt="" />
           </Link> */}
+          <div className="anim2"></div>
+          <div className="anim1"></div>
         </section>
 
         {/* <section className="section about">
@@ -272,6 +320,7 @@ const Home: NextPageWithLayout = () => {
               <p>ვიდეო მეტი ინფორმაციისთვის</p>
             </div>
           </div>
+          <div className="anim3"></div>
         </section>
 
         {/* <section className="section footer">

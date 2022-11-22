@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 
+#__next {
+  overflow: hidden;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -77,8 +81,7 @@ body {
   /* gap: 5.625rem; */
 }
 
-.section.main::after {
-  content: '';
+.anim1 {
   position: absolute;
   background: url('/svg/left.svg');
   left: 0;
@@ -87,7 +90,29 @@ body {
   height: 37.75rem;
 }
 
-.section.main::before {
+.anim2 {
+  content: '';
+  position: absolute;
+  background: url('/svg/rigth.svg');
+  right: 0;
+  /* top: -4.81rem; */
+  top: 0;
+  width: 32.5rem;
+  height: 44.4375rem;
+  z-index: 99;
+}
+
+/* .section.main::after {
+  content: '';
+  position: absolute;
+  background: url('/svg/left.svg');
+  left: 0;
+  bottom: 0;
+  width: 41.625rem;
+  height: 37.75rem;
+} */
+
+/* .section.main::before {
   content: '';
   position: absolute;
   background: url('/svg/rigth.svg');
@@ -96,7 +121,7 @@ body {
   width: 32.5rem;
   height: 44.4375rem;
   z-index: 99;
-}
+} */
 
 .section.main > .info {
   display: flex;
@@ -139,6 +164,10 @@ body {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
+  transition: all ease-in-out 0.5s;
+}
+.section.main > .info > a:hover {
+  background: #A50451;
 }
 
 .section.main > .category {
@@ -340,10 +369,23 @@ body {
   align-items: flex-start;
   flex-direction: row;
   padding: 8.125rem 12.1875rem 11.5rem 12.1875rem;
+  position: relative;
+  height: 100vh;
 }
 
-.section.step::after {
+/* .section.step::after {
   content: '';
+  background-image: url('/svg/swallow.svg');
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -10.3125rem;
+  width: 63.75rem;
+  height: 64rem;
+  z-index: -1;
+} */
+
+.anim3 {
   background-image: url('/svg/swallow.svg');
   display: block;
   position: absolute;
@@ -551,7 +593,7 @@ body {
     width: 100%;
   }
   .section.step {
-    padding: 8.125rem 4rem 0 4rem;
+    padding: 2.125rem 4rem 0 4rem;
   }
   #__next {
     width: 100%;

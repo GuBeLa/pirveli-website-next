@@ -8,11 +8,6 @@ const Home = () => {
   const ref = useRef();
   const linkRef = useRef();
 
-  inView(".step", () => {
-    console.log("Element has entered the viewport")
-  })
-  
-
   useEffect(() => {
 
     document.querySelectorAll("section > div").forEach((item) => {
@@ -31,7 +26,7 @@ const Home = () => {
       });
 
       let category = section.querySelector(".category");
-      scroll(animate(category, { opacity: 0, scale: "0", y: "-100vh" }, { easing: "ease-in" }))
+      scroll(animate(category, { opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
 
       let anim1 = section.querySelector(".anim1");
         scroll(animate(anim1, { 
@@ -43,7 +38,10 @@ const Home = () => {
 
       let anim2 = section.querySelector(".anim2");
         scroll(animate(anim2, { 
-          x: [1000, 0],
+          x: ["-100", "200"],
+          y: [-90, 200],
+          opacity: [0, 1, 1, 0],
+
         }), {
         target: anim2
       });
@@ -131,6 +129,7 @@ const Home = () => {
           </Link>
         </header>
         <section className="section main">
+          <div className="anim2"></div>
           <article
             className="info"
             data-aos="fade-down"
@@ -190,7 +189,6 @@ const Home = () => {
           {/* <Link href="#" className="scroll_down">
             <Image width={140} height={140} src="/svg/scroll.svg" alt="" />
           </Link> */}
-          <div className="anim2"></div>
           <div className="anim1"></div>
         </section>
 

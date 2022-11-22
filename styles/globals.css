@@ -89,10 +89,10 @@ body {
   bottom: 0;
   width: 41.625rem;
   height: 37.75rem;
+  z-index: -1;
 }
 
 .anim2 {
-  content: '';
   position: absolute;
   background: url('/svg/rigth.svg');
   right: 0;
@@ -100,7 +100,7 @@ body {
   top: 0;
   width: 32.5rem;
   height: 44.4375rem;
-  z-index: 99;
+  z-index: -1;
 }
 
 /* .section.main::after {
@@ -395,6 +395,7 @@ body {
 
 .section.step > .text_list {
   width: 40.625rem;
+  z-index: 2;
 }
 
 .section.step > .text_list > h2,
@@ -445,6 +446,7 @@ body {
 .section.step > .video_content {
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 
 .section.step > .video_content > .video {

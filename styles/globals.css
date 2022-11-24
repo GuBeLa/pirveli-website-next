@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
@@ -84,22 +84,22 @@ body {
 
 .anim1 {
   position: absolute;
-  background: url('/svg/left.svg');
+  background: url('/svg/bird.svg');
   left: 0;
   bottom: 0;
-  width: 41.625rem;
-  height: 37.75rem;
+  width: 35.8125rem;
+  height: 46.6875rem;
   z-index: -1;
 }
 
 .anim2 {
   position: absolute;
-  background: url('/svg/rigth.svg');
+  background: url('/svg/bird.svg');
   right: 0;
   /* top: -4.81rem; */
   top: 0;
-  width: 32.5rem;
-  height: 44.4375rem;
+  width: 35.8125rem;
+  height: 46.6875rem;
   z-index: -1;
 }
 
@@ -360,6 +360,34 @@ body {
 }
 /* why */
 
+/* header fixed */
+.header_fixed {
+  width: 100%;
+  height: 44px;
+  background: #383838;
+  position: fixed;
+  opacity: 0;
+  padding: 0 12.1875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 9;
+}
+
+.header_fixed li {
+  display: inline-block;
+  margin-right: 2.5rem;
+}
+
+.header_fixed a {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+/* header fixed */
+
 /* step */
 .section.step {
   justify-content: flex-start;
@@ -589,10 +617,18 @@ body {
     padding: 0;
   }
   .section.step > .video_content > .video {
-    width: 100%;
+    width: 46rem;
+    height: 28.25rem;
+    margin-top: 6rem;
+  }
+  .section.step > .text_list {
+    margin-top: 5rem;
   }
   .section.step {
     padding: 2.125rem 4rem 0 4rem;
+  }
+  .header_fixed {
+    padding: 0 4rem;
   }
   #__next {
     width: 100%;

@@ -20,7 +20,7 @@ const Home = () => {
     document.querySelectorAll(".main").forEach((section) => {
       let article = section.querySelectorAll("article")[0];
         scroll(animate(article, { 
-          y: ["-500px", "500px"],
+          y: ["-100px", "500px"],
         }), {
         target: article
       });
@@ -28,20 +28,26 @@ const Home = () => {
       let category = section.querySelector(".category");
       scroll(animate(category, { opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
 
+      let header_fixed = document.querySelector(".header_fixed");
+      scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
+
+      let header = document.querySelector(".header");
+      scroll(animate(header, { top: "50px" }, { easing: "ease-in" }))
       let anim1 = section.querySelector(".anim1");
         scroll(animate(anim1, { 
-          x: [1000, 0],
-          y: [-1000, 0],
+          x: ["800px", 0],
+          y: ["-800px", 0],
+          duration: [500, 0],
+          delay: 2
         }), {
-        target: anim1
+        target: anim1,
       });
 
       let anim2 = section.querySelector(".anim2");
         scroll(animate(anim2, { 
-          x: ["-100", "200"],
-          y: [-90, 200],
+          x: ["0", "0"],
+          y: [0, 0],
           opacity: [0, 1, 1, 0],
-
         }), {
         target: anim2
       });
@@ -89,6 +95,19 @@ const Home = () => {
         data-aos-easing="ease-in-sine"
         data-aos-duration="600"
       >
+        <header className='header_fixed'>
+            <ul>
+              <li><Link target="_blank" href="https://optimoml.geopay.ge/index.php">ონლაინ მაღაზია</Link></li>
+              <li><Link target="_blank" href="https://medical.pirveli.ge">სამედიცინო ბარათი</Link></li>
+              <li><Link target="_blank" href="https://vouchers.pirveli.ge">ვაუჩერები</Link></li>
+              <li><Link target="_blank" href="https://lot51.pirveli.ge">გათამაშება</Link></li>
+              <li><Link target="_blank" href="">თამაშები</Link></li>
+            </ul>
+
+            <Link href="#">
+              <Image src="/svg/ge.svg" width={24} height={18} alt="" />
+            </Link>
+        </header>
         <header className="header">
           <Link href="#">
             <Image width={175} height={50} src="/svg/logo.svg" alt="" />
@@ -309,7 +328,7 @@ const Home = () => {
 
           <div className="video_content">
             <div className="video">
-              <Image width={876} height={532} src="/svg/play.svg" alt="" />
+              <Image width={100} height={100} src="/svg/play.svg" alt="" />
             </div>
 
             <div className="play_content">

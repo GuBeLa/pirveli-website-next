@@ -632,11 +632,11 @@ body {
   }
   .section.step > .video_content > .video {
     width: 55rem;
-    height: 33.4375rem;
-    margin-top: 10rem;
+    height: 25rem;
+    margin-top: 8rem;
   }
   .section.step > .text_list {
-    margin-top: 11rem;
+    margin-top: 7rem;
   }
   .section.step {
     padding: 2.125rem 2.1875rem 0 2.1875rem;
@@ -668,7 +668,7 @@ body {
     line-height: 3rem;
   }
   .section.main > .info {
-    margin-bottom: 5.8125rem;
+    margin-bottom: 8.8125rem;
   }
   .section.main {
     margin-bottom: 0;

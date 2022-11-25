@@ -78,7 +78,8 @@ body {
 .section.main {
   position: relative;
   justify-content: center;
-  margin-bottom: 150px;
+  margin-bottom: 9.375rem;
+  z-index: 9;
   /* gap: 5.625rem; */
 }
 
@@ -216,7 +217,7 @@ body {
 
 .section.main > .category li a:hover img {
   opacity: 1;
-  transform: translate(-50%, -75%);
+  transform: translate(-50%, -94%);
 }
 
 .scroll_down {

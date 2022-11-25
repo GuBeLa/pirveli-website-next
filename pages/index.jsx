@@ -32,27 +32,34 @@ const Home = () => {
       scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
 
       let header = document.querySelector(".header");
-      scroll(animate(header, { top: "50px" }, { easing: "ease-in" }))
-      let anim1 = document.querySelector(".anim1");
-        scroll(animate(anim1, { 
-          // x: [200, -100],
-          // y: ["0", 200],
-          // x: [0, 100],
-          top: "-100px",
-          duration: [500, 0],
-          delay: 2
-        }), {
-        target: anim1,
-      });
+      scroll(animate(header, { top: "50px" }, { easing: "ease-in" }));
 
-      let anim2 = section.querySelector(".anim2");
-        scroll(animate(anim2, { 
-          x: ["0", "0"],
-          y: [0, 0],
-          opacity: [0, 1, 1, 0],
-        }), {
-        target: anim2
-      });
+      let anim1 = document.querySelector(".anim1");
+      scroll(animate(anim1, { x: "180vh", y: "-180vh" }, { duration: 200 }));
+
+      let anim2 = document.querySelector(".anim2");
+      scroll(animate(anim2, { x: "100vh", y: "-100vh" }, { easing: "ease-in" }));
+
+      // let anim1 = document.querySelector(".anim1");
+      //   scroll(animate(anim1, { 
+      //     x: [1000, 0],
+      //     y: [-1000, 0],
+      //     // x: [0, 100],
+      //     // top: "-100px",
+      //     duration: [500, 0],
+      //     delay: 2
+      //   }), {
+      //   target: anim1,
+      // });
+
+      // let anim2 = section.querySelector(".anim2");
+      //   scroll(animate(anim2, { 
+      //     x: ["0", "0"],
+      //     y: [0, 0],
+      //     opacity: [0, 1, 1, 0],
+      //   }), {
+      //   target: anim2
+      // });
     });
 
     document.querySelectorAll(".step").forEach((section) => {
@@ -99,9 +106,9 @@ const Home = () => {
       >
         <header className='header_fixed'>
             <ul>
-              <li><Link target="_blank" href="https://optimoml.geopay.ge/index.php">ონლაინ მაღაზია</Link></li>
-              <li><Link target="_blank" href="https://medical.pirveli.ge">სამედიცინო ბარათი</Link></li>
-              <li><Link target="_blank" href="https://vouchers.pirveli.ge">ვაუჩერები</Link></li>
+              <li><Link target="_blank" href="https://optimoml.geopay.ge/index.php">მაღაზია</Link></li>
+              <li><Link target="_blank" href="https://medical.pirveli.ge">მედიქალი</Link></li>
+              <li><Link target="_blank" href="https://vouchers.pirveli.ge">ვაუჩერი</Link></li>
               <li><Link target="_blank" href="https://lot51.pirveli.ge">გათამაშება</Link></li>
               <li><Link target="_blank" href="">თამაშები</Link></li>
             </ul>
@@ -189,7 +196,7 @@ const Home = () => {
               <li>
                 <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.ge">
                   ვაუჩერი
-                  <Image src={'/svg/main-min.png'} width={226} height={226} alt='' />
+                  <Image src={'/svg/sale-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>

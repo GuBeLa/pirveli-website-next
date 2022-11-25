@@ -33,10 +33,12 @@ const Home = () => {
 
       let header = document.querySelector(".header");
       scroll(animate(header, { top: "50px" }, { easing: "ease-in" }))
-      let anim1 = section.querySelector(".anim1");
+      let anim1 = document.querySelector(".anim1");
         scroll(animate(anim1, { 
-          x: ["800px", 0],
-          y: ["-800px", 0],
+          // x: [200, -100],
+          // y: ["0", 200],
+          // x: [0, 100],
+          top: "-100px",
           duration: [500, 0],
           delay: 2
         }), {

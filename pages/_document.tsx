@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta name="description" content="pirveli website" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
         </Head>
         <body>
           <Main />

@@ -608,7 +608,7 @@ body {
 
 
 
-@media screen and (min-device-width: 1440px) and (max-device-width: 1600px) { 
+@media only screen and (min-width: 1440px) and (max-width: 1600px) { 
   .anim1 {
     left: -18.6rem;
     bottom: -19rem;
@@ -679,7 +679,7 @@ body {
 }
 
 
-@media screen and (min-device-width: 1366px) and (max-device-width: 1440px) { 
+@media only screen and (min-width: 1366px) and (max-width: 1440px) { 
   .anim1 {
     left: -23.5rem;
     bottom: -20.6rem;
@@ -746,7 +746,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 1280px) and (max-device-width: 1366px) { 
+@media only screen and (min-width: 1280px) and (max-width: 1366px) { 
   .anim1 {
     left: -15rem;
     bottom: -16.8rem;
@@ -816,7 +816,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 1024px) and (max-device-width: 1280px) { 
+@media only screen and (min-width: 1024px) and (max-width: 1280px) { 
   .anim1 {
     left: -17rem;
     bottom: -17.8rem;

@@ -35,7 +35,7 @@ const Home = () => {
       scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
 
       let header = document.querySelector(".header");
-      scroll(animate(header, { top: "50px" }, { easing: "ease-in" }));
+      scroll(animate(header, { opacity: 0 }, { easing: "ease-in" }));
 
       let anim1 = document.querySelector(".anim1");
       scroll(animate(anim1, { x: "180vh", y: "-180vh" }, { duration: 200 }));

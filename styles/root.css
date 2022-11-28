@@ -164,12 +164,12 @@ table {
 
 @font-face {
   font-family: 'Avenir Next Georgian';
-  src: url('../public/fonts/AvenirNextGeorgian-Demi.eot');
-  src: url('../public/fonts/AvenirNextGeorgian-Demi.eot?#iefix') format('embedded-opentype'),
-      url('../public/fonts/AvenirNextGeorgian-Demi.woff2') format('woff2'),
-      url('../public/fonts/AvenirNextGeorgian-Demi.woff') format('woff'),
-      url('../public/fonts/AvenirNextGeorgian-Demi.ttf') format('truetype'),
-      url('../public/fonts/AvenirNextGeorgian-Demi.svg#AvenirNextGeorgian-Demi') format('svg');
+  src: url('/fonts/AvenirNextGeorgian-Demi.eot');
+  src: url('/fonts/AvenirNextGeorgian-Demi.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/AvenirNextGeorgian-Demi.woff2') format('woff2'),
+      url('/fonts/AvenirNextGeorgian-Demi.woff') format('woff'),
+      url('/fonts/AvenirNextGeorgian-Demi.ttf') format('truetype'),
+      url('/fonts/AvenirNextGeorgian-Demi.svg#AvenirNextGeorgian-Demi') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

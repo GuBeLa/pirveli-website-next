@@ -115,6 +115,7 @@ const Home = () => {
               <li><Link target="_blank" href="https://vouchers.pirveli.ge">ვაუჩერი</Link></li>
               <li><Link target="_blank" href="https://lot51.pirveli.ge">გათამაშება</Link></li>
               <li><Link target="_blank" href="">თამაშები</Link></li>
+              <li><Link target="_blank" href="https://www.figma.com/proto/WUbsCoAXURabJ1LqfqNUnn/GEO--mystery-box?page-id=0%3A1&node-id=2%3A18&viewport=1354%2C-319%2C0.09&scaling=min-zoom&starting-point-node-id=2%3A18">მისტერი ბოქსი</Link></li>
             </ul>
 
             <Link href="#">

@@ -601,7 +601,7 @@ footer {
   margin-bottom: 20px;
 }
 .footer_info > span {
-  margin-bottom: 140px;
+  margin-bottom: 185px;
   font-weight: 500;
   font-size: 20px;
   line-height: 16px;
@@ -657,10 +657,10 @@ footer {
     font-size: 55px;
     max-width: 46rem;
     line-height: 130%;
-    margin-bottom: 3.125rem;
+    margin-bottom: 1.125rem;
   }
   .section.main > .info > p {
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
   }
   .section.main > .category {
     margin-top: 0;

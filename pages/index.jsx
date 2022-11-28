@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
-import { animate, scroll, inView } from "motion";
+import { animate, scroll } from "motion";
 
 const Home = () => {
   const ref = useRef();
@@ -24,6 +24,9 @@ const Home = () => {
         }), {
         target: article
       });
+
+      let footer_anim = document.querySelector(".footer_anim");
+      scroll(animate(footer_anim, { bottom: "0" }))
 
       let category = section.querySelector(".category");
       scroll(animate(category, { opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
@@ -67,7 +70,7 @@ const Home = () => {
     });
   }, [])
 
-  const changeColor = (color, icon) => {
+  const changeColor = (color, icon = '') => {
     ref.current.style.cssText = `
       background: ${color}; 
       height: 6.25rem;
@@ -349,6 +352,70 @@ const Home = () => {
           </div>
           <div className="anim3"></div>
         </section>
+
+        <footer className='footer_anim'>
+          <div className="wrapper-flex">
+            <div className="footer-item info">
+             <div className="footer_info">
+              <h2>v.tvauri@optimogroup.io</h2>
+              <p>ქ. თბილისი წერეთლის გამზირი 60</p>
+              <span>+995 598 23 08 23</span>
+             </div>
+            </div>
+            <div className="footer-item menu">
+            <div className="menu-flex">
+                <div className="menu-list">
+                  <h2>პირველი</h2>
+                  <ul>
+                    <li>
+                      <Link href="#">ჩვენ შესახებ</Link>
+                    </li>
+                    <li>
+                      <Link href="#">მიმდინარე ვაკანსიები</Link>
+                    </li>
+                    <li>
+                      <Link href="#">ბლოგი</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="footer-item menu">
+              <div className="menu-flex">
+                <div className="menu-list">
+                  <h2>წესები და პირობები</h2>
+                  <ul>
+                    <li>
+                      <Link href="#">ზოგადი წესები</Link>
+                    </li>
+                    <li>
+                      <Link href="#">ხშირად დასმული კითხვები</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="footer-item icons">
+              <div className="icons-box">
+              <Link href="#">
+                <Image src="/svg/facebook.svg" width={24} height={25} alt="" />
+              </Link>
+              <Link href="#">
+                <Image src="/svg/music.svg" width={24} height={25} alt="" />
+              </Link>
+              <Link href="#">
+                <Image src="/svg/instagram.svg" width={24} height={25} alt="" />
+              </Link>
+              <Link href="#">
+                <Image src="/svg/youtube.svg" width={24} height={25} alt="" />
+              </Link>
+              </div>
+            </div>
+            <div className="footer-item text">
+              <p>Copyright © 2022 our website. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
 
         {/* <section className="section footer">
           <div className="container">

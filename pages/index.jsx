@@ -10,6 +10,77 @@ const Home = () => {
 
   useEffect(() => {
 
+    const blocks = document.querySelectorAll(".section"),
+    block = document.querySelector("section"),
+    sectionHeight = parseInt(window.getComputedStyle(block).height),
+    links = document.querySelectorAll(".link");
+
+    let inScroll = false, //flag for correct duration step by step
+        durationOneScroll = 0, //duration if one step
+        arrSections = [],
+        step = 0;
+
+    for (let i = 0; i < blocks.length; i++) {
+        arrSections.push(sectionHeight * i);
+    }
+
+//     index.jsx?7ffd:31 Key pressed ArrowUp 
+//  Key code value: ArrowUp
+// 2index.jsx?7ffd:31 Key pressed ArrowDown 
+//  Key code value: ArrowDown
+
+    document.addEventListener('keydown', (event) => {
+      event.preventDefault()
+      var name = event.key;
+      var code = event.code;
+      // Alert the key name and key code on keydown
+      if (inScroll === false) {
+        inScroll = true;
+        //move down
+        if (code == "ArrowDown") {
+            step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+            window.scrollTo({
+                top: arrSections[step],
+                behavior: "smooth"
+            });
+            setTimeout(() => { inScroll = false }, durationOneScroll);
+        } else {
+            //move up
+            step === 0 ? step = 0 : step = step - 1;
+            window.scrollTo({
+                top: arrSections[step],
+                behavior: "smooth"
+            });
+            setTimeout(() => { inScroll = false }, durationOneScroll);
+        }
+    }
+    }, false);
+
+//one page scroll by mouse wheel
+    document.addEventListener("wheel", function (event) {
+      event.preventDefault()
+        if (inScroll === false) {
+            inScroll = true;
+            //move down
+            if (event.deltaY > 0) {
+                step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            } else {
+                //move up
+                step === 0 ? step = 0 : step = step - 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            }
+        }
+    })
+
     document.querySelectorAll("section > div").forEach((item) => {
       scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
         target: item,
@@ -354,7 +425,7 @@ const Home = () => {
           <div className="anim3"></div>
         </section>
 
-        <footer className='footer_anim'>
+        <section className='section footer_anim'>
           <div className="wrapper-flex">
             <div className="footer-item info">
              <div className="footer_info">
@@ -416,7 +487,7 @@ const Home = () => {
               <p>Copyright © 2022 our website. All rights reserved.</p>
             </div>
           </div>
-        </footer>
+        </section>
 
         {/* <section className="section footer">
           <div className="container">

@@ -4,6 +4,10 @@
   overflow: hidden;
 }
 
+#bwc-wrap {
+  position: absolute;
+}
+
 body {
   display: flex;
   justify-content: center;

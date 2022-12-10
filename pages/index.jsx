@@ -16,83 +16,78 @@ const Home = () => {
       var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bch, sn);
   })(document, window, 'script');
 
-    const blocks = document.querySelectorAll(".section"),
-    block = document.querySelector("section"),
-    sectionHeight = parseInt(window.getComputedStyle(block).height),
-    links = document.querySelectorAll(".link");
+    // const blocks = document.querySelectorAll(".section"),
+    // block = document.querySelector("section"),
+    // sectionHeight = parseInt(window.getComputedStyle(block).height),
+    // links = document.querySelectorAll(".link");
 
-    let inScroll = false, //flag for correct duration step by step
-        durationOneScroll = 0, //duration if one step
-        arrSections = [],
-        step = 0;
+    // let inScroll = false, //flag for correct duration step by step
+    //     durationOneScroll = 0, //duration if one step
+    //     arrSections = [],
+    //     step = 0;
 
-    for (let i = 0; i < blocks.length; i++) {
-        arrSections.push(sectionHeight * i);
-    }
+    // for (let i = 0; i < blocks.length; i++) {
+    //     arrSections.push(sectionHeight * i);
+    // }
 
-//     index.jsx?7ffd:31 Key pressed ArrowUp 
-//  Key code value: ArrowUp
-// 2index.jsx?7ffd:31 Key pressed ArrowDown 
-//  Key code value: ArrowDown
-
-    document.addEventListener('keydown', (event) => {
-      event.preventDefault()
-      var name = event.key;
-      var code = event.code;
-      // Alert the key name and key code on keydown
-      if (inScroll === false) {
-        inScroll = true;
-        //move down
-        if (code == "ArrowDown") {
-            step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-            window.scrollTo({
-                top: arrSections[step],
-                behavior: "smooth"
-            });
-            setTimeout(() => { inScroll = false }, durationOneScroll);
-        } else {
-            //move up
-            step === 0 ? step = 0 : step = step - 1;
-            window.scrollTo({
-                top: arrSections[step],
-                behavior: "smooth"
-            });
-            setTimeout(() => { inScroll = false }, durationOneScroll);
-        }
-    }
-    }, false);
+    // document.addEventListener('keydown', (event) => {
+    //   event.preventDefault()
+    //   var name = event.key;
+    //   var code = event.code;
+    //   // Alert the key name and key code on keydown
+    //   if (inScroll === false) {
+    //     inScroll = true;
+    //     //move down
+    //     if (code == "ArrowDown") {
+    //         step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+    //         window.scrollTo({
+    //             top: arrSections[step],
+    //             behavior: "smooth"
+    //         });
+    //         setTimeout(() => { inScroll = false }, durationOneScroll);
+    //     } else {
+    //         //move up
+    //         step === 0 ? step = 0 : step = step - 1;
+    //         window.scrollTo({
+    //             top: arrSections[step],
+    //             behavior: "smooth"
+    //         });
+    //         setTimeout(() => { inScroll = false }, durationOneScroll);
+    //     }
+    // }
+    // }, false);
 
 //one page scroll by mouse wheel
-    document.addEventListener("wheel", function (event) {
-      event.preventDefault()
-        if (inScroll === false) {
-            inScroll = true;
-            //move down
-            if (event.deltaY > 0) {
-                step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-                window.scrollTo({
-                    top: arrSections[step],
-                    behavior: "smooth"
-                });
-                setTimeout(() => { inScroll = false }, durationOneScroll);
-            } else {
-                //move up
-                step === 0 ? step = 0 : step = step - 1;
-                window.scrollTo({
-                    top: arrSections[step],
-                    behavior: "smooth"
-                });
-                setTimeout(() => { inScroll = false }, durationOneScroll);
-            }
-        }
-    })
+    // document.addEventListener("wheel", function (event) {
+    //   event.preventDefault()
+    //     if (inScroll === false) {
+    //         inScroll = true;
+    //         //move down
+    //         if (event.deltaY > 0) {
+    //             step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+    //             window.scrollTo({
+    //                 top: arrSections[step],
+    //                 behavior: "smooth"
+    //             });
+    //             setTimeout(() => { inScroll = false }, durationOneScroll);
+    //         } else {
+    //             //move up
+    //             step === 0 ? step = 0 : step = step - 1;
+    //             window.scrollTo({
+    //                 top: arrSections[step],
+    //                 behavior: "smooth"
+    //             });
+    //             setTimeout(() => { inScroll = false }, durationOneScroll);
+    //         }
+    //     }
+    // })
 
-    document.querySelectorAll("section > div").forEach((item) => {
-      scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
-        target: item,
-        offset: ["start end", "end end", "start start", "end start"]
-      });
-    });
+    // document.querySelectorAll("section > div").forEach((item) => {
+    //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
+    //     target: item,
+    //     offset: ["start end", "end end", "start start", "end start"]
+    //   });
+    // });
 
     document.querySelectorAll(".main").forEach((section) => {
       let article = section.querySelectorAll("article")[0];
@@ -106,44 +101,62 @@ const Home = () => {
       scroll(animate(footer_anim, { bottom: "0" }))
 
       let category = section.querySelector(".category");
-      scroll(animate(category, { opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
+      scroll(animate(category, { width: "30%", opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
 
       let header_fixed = document.querySelector(".header_fixed");
       scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
 
       let header = document.querySelector(".header");
-      scroll(animate(header, { opacity: 0 }, { easing: "ease-in" }));
+      scroll(animate(header, { opacity: 1, top: "0" }, { easing: "ease-in" }));
 
       let anim1 = document.querySelector(".anim1");
-      scroll(animate(anim1, { x: "180vh", y: "-180vh" }, { duration: 200 }));
+      scroll(animate(anim1, { x: "180vh", y: "-90vh" }, { duration: 200 }));
 
       let anim2 = document.querySelector(".anim2");
       scroll(animate(anim2, { x: "100vh", y: "-100vh" }, { easing: "ease-in" }));
 
-      // let anim1 = document.querySelector(".anim1");
-      //   scroll(animate(anim1, { 
-      //     x: [1000, 0],
-      //     y: [-1000, 0],
-      //     // x: [0, 100],
-      //     // top: "-100px",
-      //     duration: [500, 0],
-      //     delay: 2
-      //   }), {
-      //   target: anim1,
-      // });
+      let video_content = document.querySelector(".video_content");
+      scroll(animate(video_content, { scale: "0.3", top: "100px" }, { easing: "ease-in" }));
 
-      // let anim2 = section.querySelector(".anim2");
-      //   scroll(animate(anim2, { 
-      //     x: ["0", "0"],
-      //     y: [0, 0],
-      //     opacity: [0, 1, 1, 0],
-      //   }), {
-      //   target: anim2
-      // });
+      let text_outer = document.querySelector(".text_outer");
+      scroll(animate(text_outer, { opacity: 1, top: "50vh" }, { easing: "ease-in" }));
+
+      // let left_anim = document.querySelector(".left_anim");
+      // scroll(animate(left_anim, { left: "-300px" }, { easing: "ease-in" }));
+
+      // let left_anim_fast = document.querySelector(".left_anim_fast");
+      // scroll(animate(left_anim_fast, { left: "-300px" }, { easing: "ease-in" }));
     });
 
     document.querySelectorAll(".step").forEach((section) => {
-      scroll(animate(section, { opacity: 1, y: ["-50vh", "0"] }, { easing: "ease-in" }))
+      scroll(animate(section, { opacity: 1, }, { easing: "ease-in" }))
+
+      let video_content = document.querySelector(".video_content");
+      scroll(animate(video_content, { scale: "1" }, { easing: "ease-in" }));
+
+      let header = document.querySelector(".header");
+      scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
+
+      let text_outer = document.querySelector(".text_outer");
+      scroll(animate(text_outer, { opacity: 1, top: "0" }, { easing: "ease-in" }));
+
+      let left_anim = document.querySelector(".left_anim");
+      scroll(animate(left_anim, { left: "auto" }, { easing: "ease-in" }));
+
+      let left_anim_fast = document.querySelector(".left_anim_fast");
+      scroll(animate(left_anim_fast, { left: "100px" }, { easing: "ease-in" }));
+    });
+
+    document.querySelectorAll(".footer_anim").forEach((section) => {
+      scroll(animate(section, { opacity: 1, }, { easing: "ease-in" }))
+
+      let video_content = document.querySelector(".video_content");
+      scroll(animate(video_content, { scale: "1" }, { easing: "ease-in" }));
+
+      let header = document.querySelector(".header");
+      scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
+
+     
     });
   }, [])
 
@@ -152,10 +165,6 @@ const Home = () => {
       background: ${color}; 
       height: 6.25rem;
     `;
-
-    // linkRef!.current.style.cssText = `
-    //   opacity: 0.6
-    // `;
   }
 
   const removeColor = (color) => {
@@ -163,10 +172,6 @@ const Home = () => {
       background: ${color}; 
       height: 6.25rem;
     `;
-
-    // linkRef.current.style.cssText = `
-    //   opacity: 1;
-    // `;
   }
 
   return (
@@ -391,9 +396,9 @@ const Home = () => {
 
         <section className="section step">
           <div className="text_list">
-            <h2>ლოიალურობაზე დაფუძნებული</h2>
+            <h2 className='left_anim'>ლოიალურობაზე დაფუძნებული</h2>
             <p>
-              <span>ლოიალურობაზე დაფუძნებული</span>
+              <span className='left_anim_fast'>ლოიალურობაზე დაფუძნებული</span>
             </p>
             <div className="text_outer">
               <div className="text_item">

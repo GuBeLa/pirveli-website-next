@@ -906,3 +906,117 @@ body {
     height: 100vh;
   }
 }
+
+
+/* mobile */
+@media only screen and (max-width: 1024px) {
+  .header_fixed,
+  .header {
+    padding: 0 16px;
+  }
+  .header_fixed > ul {
+    display: none;
+  }
+  .section.main > .info > h2 {
+    font-size: 26px;
+    line-height: 130%;
+  }
+  .section.main > .info > p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+  }
+  .section.main > .info > a {
+    width: 133px;
+    height: 48px;
+    line-height: 48px;
+  }
+  .section.main > .info {
+    margin-top: 50vh;
+  }
+  .anim1 {
+    scale: 0.7;
+    left: -16.5rem;
+    bottom: -21rem;
+  }
+  .anim2 {
+    scale: 0.7;
+    right: -15.5rem;
+    top: -23.3rem;
+  }
+  .anim3 {
+    right: 0;
+    left: -25rem;
+    top: 6.6875rem;
+    scale: 0.5;
+  }
+  .section.step {
+    padding: 0 16px;
+    flex-direction: column;
+  }
+  .section.step > .text_list > h2,
+  .section.step > .text_list > p,
+  .text_outer > .text_item > h2 {
+    font-size: 16px;
+  }
+  .section.step > .text_list {
+    width: 100%;
+  }
+  .text_outer > .text_item > p {
+    font-size: 14px;
+  }
+  .section.step > .video_content,
+  .section.step > .video_content > .video {
+    width: 100%;
+  }
+  .section.step > .video_content > .video {
+    height: 209px;
+  }
+  .section.step > .video_content > .video > img {
+    scale: 0.5;
+  }
+  .footer_anim.section {
+    height: auto;
+    padding: 0 16px;
+  }
+  .wrapper-flex {
+    flex-flow: column;
+    padding: 20px 0;
+  }
+  .footer-item.info,
+  .footer-item.menu {
+    width: 100%;
+  }
+  .footer_info > p,
+  .footer_info > span {
+    font-size: 16px;
+  }
+  .footer_info > span {
+    margin-bottom: 35px;
+  }
+  .footer_info > h2 {
+    font-size: 20px;
+  }
+  .footer-item.text {
+    width: 100%;
+    margin: 15px 0;
+  }
+  .section.main > .category {
+    padding: 0 16px;
+    height: 300px;
+    width: 100%;
+  }
+  .section.main > .category ul {
+    height: 300px;
+    overflow-x: scroll;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .section.main > .category li {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    background: red;
+  }
+}

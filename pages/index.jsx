@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { animate, scroll } from "motion";
+import { isMobile } from 'react-device-detect';
 
 const Home = () => {
   const ref = useRef();
@@ -162,10 +163,14 @@ const Home = () => {
   }, [])
 
   const changeColor = (color, icon = '') => {
-    ref.current.style.cssText = `
-      background: ${color}; 
-      height: 6.25rem;
-    `;
+    if(isMobile) {
+      return false
+    } else {
+      ref.current.style.cssText = `
+        background: ${color}; 
+        height: 6.25rem;
+      `;
+    }
   }
 
   const removeColor = (color) => {

@@ -1,12 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { animate, scroll } from "motion";
 
 const Home = () => {
   const ref = useRef();
   const linkRef = useRef();
+  const [mobile_menu, setMobile_menu] = useState(false)
 
   useEffect(() => {
 
@@ -242,6 +243,60 @@ const Home = () => {
           <Link href="https://auth.pirveli.ge/realms/xracoon-demo/protocol/openid-connect/auth?response_type=code&client_id=demo-client&scope=email%20profile%20roles%20openid&state=ozej6dlmtIpneeVt7QoGPy2zXJ9e6BNPdGltyKyn3X4%3D&redirect_uri=https://pirveli.pirveli.ge&nonce=KAmXCp0jHrPiUph9D2p5yVwdpT5g3qWO0iCxqJFbiv0" className="sign">
             შესვლა
           </Link>
+          <button type="button" className="mobile_menu" onClick={() => setMobile_menu(true)}>
+            <Image src="/svg/mobile_menu.svg" alt="" width={24} height={24} />
+          </button>
+          {mobile_menu ? (
+            <div className="mobile_menu_outer">
+              <header>
+                <ul>
+                  <li>
+                    <Link href="#">
+                      <Image src="/svg/ru.svg" height={24} width={24} alt="" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="#">
+                      <Image src="/svg/ge.svg" height={24} width={24} alt="" />
+                    </Link>
+                  </li>
+                </ul>
+                <Image onClick={() => setMobile_menu(false)} src="/svg/close_menu.svg" alt="" width={24} height={24} />
+              </header>
+
+              <section>
+                <div>
+                  <h2 className='mobile_title'>ნავიგაცია</h2>
+                </div>
+                <div className='nav_content'>
+                  <div className="nav_item">
+                    <Image src="/svg/mobile_shop.svg" height={24} width={24} alt="" />
+                    <h3>მაღაზია</h3>
+                  </div>
+                  <div className="nav_item">
+                    <Image src="/svg/mobile_medical.svg" height={24} width={24} alt="" />
+                    <h3>მედიქალი</h3>
+                  </div>
+                  <div className="nav_item">
+                    <Image src="/svg/mobile_voucher.svg" height={24} width={24} alt="" />
+                    <h3>ვაუჩერები</h3>
+                  </div>
+                  <div className="nav_item">
+                    <Image src="/svg/mobile_games.svg" height={24} width={24} alt="" />
+                    <h3>გათამაშება</h3>
+                  </div>
+                  <div className="nav_item">
+                    <Image src="/svg/mobile_game.svg" height={24} width={24} alt="" />
+                    <h3>თამაშები</h3>
+                  </div>
+                </div>
+              </section>
+              <Link className='mobile_enter' href="#">
+                შესვლა
+              </Link>
+            </div>
+          ) : ''}
+          
         </header>
         <section className="section main">
           <div className="anim2"></div>

@@ -414,7 +414,7 @@ body {
   height: 100vh;
   margin-top: 5rem;
   background: #edeeef;
-  z-index: 999;
+  /* z-index: 999; */
 }
 
 /* .section.step::after {

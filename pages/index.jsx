@@ -42,7 +42,7 @@ const Home = () => {
     sectionHeight = window.innerHeight;
     // links = document.querySelectorAll(".link");
 
-    let inScroll = false, //flag for correct duration step by step
+    let inScroll = true, //flag for correct duration step by step
         durationOneScroll = 0, //duration if one step
         arrSections = [],
         step = 0;
@@ -80,23 +80,25 @@ const Home = () => {
 
 //one page scroll by mouse wheel
 if(isMobile) {
-    window.addEventListener("touchstart", function (event) {
+    var lastPoint = null;
+    document.addEventListener("touchstart", function (event) {
       console.log(event)
-      event.preventDefault();
+      // event.preventDefault();
       // if (event.touches.length > 1 || (event.type === "touchstart" && event.touches.length > 0))
       //   return;
         
         if (inScroll === false) {
             inScroll = true;
             //move down
-            if (event.deltaY > 0) {
+            var currentPoint = event.originalEvent.changedTouches[0].pageY;
+            if (lastPoint != null && lastPoint < currentPoint) {
                 step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
                 window.scrollTo({
                     top: arrSections[step],
                     behavior: "smooth"
                 });
                 setTimeout(() => { inScroll = false }, durationOneScroll);
-            } else {
+            } else if(lastPoint != null && lastPoint > currentPoint) {
                 //move up
                 step === 0 ? step = 0 : step = step - 1;
                 window.scrollTo({
@@ -106,6 +108,7 @@ if(isMobile) {
                 setTimeout(() => { inScroll = false }, durationOneScroll);
             }
         }
+        lastPoint = currentPoint;
       }, {passive:false});
   }
 

@@ -80,16 +80,12 @@ const Home = () => {
 
 //one page scroll by mouse wheel
 if(isMobile) {
-  window.addEventListener('touchstart', function(event){
-    //console.log(event);
-    
-    
-  });
-
-    window.addEventListener("touchend", function (event) {
-      if (event.cancelable) {
-        event.preventDefault();
-        }
+    window.addEventListener("touchstart", function (event) {
+      console.log(event)
+      event.preventDefault();
+      // if (event.touches.length > 1 || (event.type === "touchstart" && event.touches.length > 0))
+      //   return;
+        
         if (inScroll === false) {
             inScroll = true;
             //move down
@@ -110,7 +106,7 @@ if(isMobile) {
                 setTimeout(() => { inScroll = false }, durationOneScroll);
             }
         }
-    })
+      }, {passive:false});
   }
 
     // document.querySelectorAll("section > div").forEach((item) => {

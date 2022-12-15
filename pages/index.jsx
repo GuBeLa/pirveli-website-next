@@ -521,9 +521,9 @@ const Home = () => {
           <div className="wrapper-flex">
             <div className="footer-item info">
              <div className="footer_info">
-              <h2>v.tvauri@optimogroup.io</h2>
-              <p>ქ. თბილისი წერეთლის გამზირი 60</p>
-              <span>+995 598 23 08 23</span>
+              <h2>info@pirveli.com</h2>
+              <p>ზოვრეთის ქ.#1</p>
+              <span>032 2 18 55 77</span>
              </div>
             </div>
             <div className="footer-item menu">

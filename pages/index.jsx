@@ -11,6 +11,19 @@ const Home = () => {
   const [mobile_menu, setMobile_menu] = useState(false)
 
   useEffect(() => {
+    // window.addEventListener('touchstart', function(event){
+    //   let startX = event.touches[0].clientX;
+    //   let startY = event.touches[0].clientY;
+    //   console.log(startX);
+    // })
+     
+    //  window.addEventListener('touchend', function(event){
+    //   //console.log(event);
+    //   let endX = event.changedTouches[0].clientX;
+    //   let endY = event.changedTouches[0].clientY;
+    //   // handleTouch(startX, endX, left, right)
+      
+    // })
 
   if(isMobile) {
     document.querySelector('.info').style.height = `${window.innerHeight}px`;
@@ -25,19 +38,18 @@ const Home = () => {
       var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bch, sn);
   })(document, window, 'script');
 
-    // const blocks = document.querySelectorAll(".section"),
-    // block = document.querySelector("section"),
-    // sectionHeight = parseInt(window.getComputedStyle(block).height),
+    const blocks = document.querySelectorAll(".mobile_swipe"),
+    sectionHeight = window.innerHeight;
     // links = document.querySelectorAll(".link");
 
-    // let inScroll = false, //flag for correct duration step by step
-    //     durationOneScroll = 0, //duration if one step
-    //     arrSections = [],
-    //     step = 0;
+    let inScroll = false, //flag for correct duration step by step
+        durationOneScroll = 0, //duration if one step
+        arrSections = [],
+        step = 0;
 
-    // for (let i = 0; i < blocks.length; i++) {
-    //     arrSections.push(sectionHeight * i);
-    // }
+    for (let i = 0; i < blocks.length; i++) {
+        arrSections.push(sectionHeight * i);
+    }
 
     // document.addEventListener('keydown', (event) => {
     //   event.preventDefault()
@@ -67,29 +79,29 @@ const Home = () => {
     // }, false);
 
 //one page scroll by mouse wheel
-    // document.addEventListener("wheel", function (event) {
-    //   event.preventDefault()
-    //     if (inScroll === false) {
-    //         inScroll = true;
-    //         //move down
-    //         if (event.deltaY > 0) {
-    //             step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-    //             window.scrollTo({
-    //                 top: arrSections[step],
-    //                 behavior: "smooth"
-    //             });
-    //             setTimeout(() => { inScroll = false }, durationOneScroll);
-    //         } else {
-    //             //move up
-    //             step === 0 ? step = 0 : step = step - 1;
-    //             window.scrollTo({
-    //                 top: arrSections[step],
-    //                 behavior: "smooth"
-    //             });
-    //             setTimeout(() => { inScroll = false }, durationOneScroll);
-    //         }
-    //     }
-    // })
+    document.addEventListener("wheel", function (event) {
+      event.preventDefault()
+        if (inScroll === false) {
+            inScroll = true;
+            //move down
+            if (event.deltaY > 0) {
+                step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            } else {
+                //move up
+                step === 0 ? step = 0 : step = step - 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            }
+        }
+    })
 
     // document.querySelectorAll("section > div").forEach((item) => {
     //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
@@ -327,7 +339,7 @@ const Home = () => {
         <section className="section main">
           <div className="anim2"></div>
           <article
-            className="info"
+            className="info mobile_swipe"
             data-aos="fade-down"
             data-aos-offset="200"
             data-aos-delay="50"
@@ -344,7 +356,7 @@ const Home = () => {
 
           <article
             ref={ref}
-            className="category"
+            className="category mobile_swipe"
             data-aos="fade-down-right"
             data-aos-duration="1500"
           >
@@ -476,7 +488,7 @@ const Home = () => {
         </section> */}
 
         <section className="section step">
-          <div className="text_list">
+          <div className="text_list mobile_swipe">
             <h2 className='left_anim'>ლოიალურობაზე დაფუძნებული</h2>
             <p>
               <span className='left_anim_fast'>ლოიალურობაზე დაფუძნებული</span>
@@ -503,7 +515,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="video_content">
+          <div className="video_content mobile_swipe">
             <div className="video">
               <Image width={100} height={100} src="/svg/play.svg" alt="" />
             </div>
@@ -517,7 +529,7 @@ const Home = () => {
           <div className="anim3"></div>
         </section>
 
-        <section className='section footer_anim'>
+        <section className='section footer_anim mobile_swipe'>
           <div className="wrapper-flex">
             <div className="footer-item info">
              <div className="footer_info">

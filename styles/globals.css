@@ -1166,4 +1166,7 @@ body {
     text-decoration: none;
     color: #FFFFFF;
   }
+  .section.main {
+    margin-bottom: 0;
+  }
 }

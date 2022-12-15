@@ -79,6 +79,7 @@ const Home = () => {
     // }, false);
 
 //one page scroll by mouse wheel
+if(isMobile) {
     document.addEventListener("wheel", function (event) {
       event.preventDefault()
         if (inScroll === false) {
@@ -102,6 +103,7 @@ const Home = () => {
             }
         }
     })
+  }
 
     // document.querySelectorAll("section > div").forEach((item) => {
     //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {

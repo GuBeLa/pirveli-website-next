@@ -80,7 +80,12 @@ const Home = () => {
 
 //one page scroll by mouse wheel
 if(isMobile) {
-    document.addEventListener("touchmove", function (event) {
+  window.addEventListener('touchstart', function(event){
+    //console.log(event);
+    
+    
+  })
+    window.addEventListener("touchend", function (event) {
       event.preventDefault()
         if (inScroll === false) {
             inScroll = true;

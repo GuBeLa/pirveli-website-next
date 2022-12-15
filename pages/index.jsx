@@ -1,4 +1,3 @@
-/* eslint-disable no-inner-declarations */
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -81,71 +80,37 @@ const Home = () => {
 
 //one page scroll by mouse wheel
 if(isMobile) {
-  let stopScrolling = false;
-
-  window.addEventListener("touchmove", handleTouchMove, {
-    passive: false
+  window.addEventListener('touchstart', function(event){
+    //console.log(event);
+    
+    
   });
 
-  function handleTouchMove(e) {
-   
-    e.preventDefault();
-
-    if (inScroll === false) {
-      inScroll = true;
-      //move down
-      if (e.deltaY > 0) {
-          step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-          window.scrollTo({
-              top: arrSections[step],
-              behavior: "smooth"
-          });
-          setTimeout(() => { inScroll = false }, durationOneScroll);
-      } else {
-          //move up
-          step === 0 ? step = 0 : step = step - 1;
-          window.scrollTo({
-              top: arrSections[step],
-              behavior: "smooth"
-          });
-          setTimeout(() => { inScroll = false }, durationOneScroll);
-      }
-  }
-  }
-
-  function onTouchStart() {
-    stopScrolling = true;
-  }
-  
-  function onTouchEnd() {
-    stopScrolling = false;
-  }
-
-
-    // window.addEventListener("touchend", function (event) {
-    //   event.preventDefault()
-    //   event.stopPropagation()
-    //     if (inScroll === false) {
-    //         inScroll = true;
-    //         //move down
-    //         if (event.deltaY > 0) {
-    //             step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-    //             window.scrollTo({
-    //                 top: arrSections[step],
-    //                 behavior: "smooth"
-    //             });
-    //             setTimeout(() => { inScroll = false }, durationOneScroll);
-    //         } else {
-    //             //move up
-    //             step === 0 ? step = 0 : step = step - 1;
-    //             window.scrollTo({
-    //                 top: arrSections[step],
-    //                 behavior: "smooth"
-    //             });
-    //             setTimeout(() => { inScroll = false }, durationOneScroll);
-    //         }
-    //     }
-    // })
+    window.addEventListener("touchend", function (event) {
+      if (event.cancelable) {
+        event.preventDefault();
+        }
+        if (inScroll === false) {
+            inScroll = true;
+            //move down
+            if (event.deltaY > 0) {
+                step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            } else {
+                //move up
+                step === 0 ? step = 0 : step = step - 1;
+                window.scrollTo({
+                    top: arrSections[step],
+                    behavior: "smooth"
+                });
+                setTimeout(() => { inScroll = false }, durationOneScroll);
+            }
+        }
+    })
   }
 
     // document.querySelectorAll("section > div").forEach((item) => {

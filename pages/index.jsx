@@ -12,12 +12,12 @@ const Home = () => {
 
   useEffect(() => {
 
-  document.querySelector('.info').style.height = `${window.innerHeight}px`;
-  document.querySelector('.category').style.height = `${window.innerHeight}px`;
-  document.querySelector('.text_list').style.height = `${window.innerHeight}px`;
-  document.querySelector('.video_content').style.height = `${window.innerHeight - 200}px`;
-  
-  
+  if(isMobile) {
+    document.querySelector('.info').style.height = `${window.innerHeight}px`;
+    document.querySelector('.category').style.height = `${window.innerHeight}px`;
+    document.querySelector('.text_list').style.height = `${window.innerHeight}px`;
+    document.querySelector('.video_content').style.height = `${window.innerHeight - 200}px`;
+  }
 
   (function(d, w, s) {
       var widgetHash = '6RbjV9Nq9riHUTrKPbFJ', bch = d.createElement(s); bch.type = 'text/javascript'; bch.async = true;

@@ -922,6 +922,17 @@ body {
 
 /* mobile */
 @media only screen and (max-width: 1024px) {
+  .header,
+  .header_fixed {
+    z-index: 9999;
+  }
+  .header_fixed > a {
+    display: none;
+  }
+  .section,
+  .section.step {
+    height: auto;
+  }
   .header_fixed,
   .header {
     padding: 0 16px;
@@ -938,6 +949,7 @@ body {
     font-size: 16px;
     line-height: 150%;
     text-align: center;
+    max-width: 343px;
   }
   .section.main > .info > a {
     width: 133px;
@@ -945,12 +957,13 @@ body {
     line-height: 48px;
   }
   .section.main > .info {
-    margin-top: 35vh;
+    height: 50vh;
+    margin-top: 0;
   }
   .anim1 {
     scale: 0.7;
-    left: -16.5rem;
-    bottom: -21rem;
+    left: -17rem;
+    bottom: 52rem;
   }
   .anim2 {
     scale: 0.7;
@@ -960,7 +973,7 @@ body {
   .anim3 {
     right: 0;
     left: -25rem;
-    top: 6.6875rem;
+    top: 27.6875rem;
     scale: 0.5;
   }
   .section.step {
@@ -1076,7 +1089,7 @@ body {
     height: 100vh;
     position: absolute;
     left: 0;
-    top: 0;
+    top: -27px;
     z-index: 9999999999;
     background: #fff;
     padding: 20px 16px;

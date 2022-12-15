@@ -12,7 +12,14 @@ const Home = () => {
 
   useEffect(() => {
 
-    (function(d, w, s) {
+  document.querySelector('.info').style.height = `${window.innerHeight}px`;
+  document.querySelector('.category').style.height = `${window.innerHeight}px`;
+  document.querySelector('.text_list').style.height = `${window.innerHeight}px`;
+  document.querySelector('.video_content').style.height = `${window.innerHeight - 200}px`;
+  
+  
+
+  (function(d, w, s) {
       var widgetHash = '6RbjV9Nq9riHUTrKPbFJ', bch = d.createElement(s); bch.type = 'text/javascript'; bch.async = true;
       bch.src = '//widgets.binotel.com/chat/widgets/' + widgetHash + '.js';
       var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bch, sn);
@@ -90,45 +97,51 @@ const Home = () => {
     //     offset: ["start end", "end end", "start start", "end start"]
     //   });
     // });
+    
 
-    document.querySelectorAll(".main").forEach((section) => {
-      let article = section.querySelectorAll("article")[0];
-        scroll(animate(article, { 
-          y: ["-100px", "500px"],
-        }), {
-        target: article
+      document.querySelectorAll(".main").forEach((section) => {
+        if(!isMobile) {
+          let article = section.querySelectorAll("article")[0];
+            scroll(animate(article, { 
+              y: ["-100px", "500px"],
+            }), {
+            target: article
+          });
+
+          let category = section.querySelector(".category");
+          scroll(animate(category, { width: "30%", opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
+        } else {
+          let header = document.querySelector(".header");
+          scroll(animate(header, { top: "30px" }, { easing: "ease-in" }));
+        }
+  
+        let footer_anim = document.querySelector(".footer_anim");
+        scroll(animate(footer_anim, { bottom: "0" }))
+  
+        let header_fixed = document.querySelector(".header_fixed");
+        scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
+  
+        let header = document.querySelector(".header");
+        scroll(animate(header, { opacity: 1, top: "0" }, { easing: "ease-in" }));
+  
+        let anim1 = document.querySelector(".anim1");
+        scroll(animate(anim1, { x: "180vh", y: "-90vh" }, { duration: 200 }));
+  
+        let anim2 = document.querySelector(".anim2");
+        scroll(animate(anim2, { x: "100vh", y: "-100vh" }, { easing: "ease-in" }));
+  
+        let video_content = document.querySelector(".video_content");
+        scroll(animate(video_content, { scale: "0.3", top: "100px" }, { easing: "ease-in" }));
+  
+        let text_outer = document.querySelector(".text_outer");
+        scroll(animate(text_outer, { opacity: 1, top: "50vh" }, { easing: "ease-in" }));
+  
+        // let left_anim = document.querySelector(".left_anim");
+        // scroll(animate(left_anim, { left: "-300px" }, { easing: "ease-in" }));
+  
+        // let left_anim_fast = document.querySelector(".left_anim_fast");
+        // scroll(animate(left_anim_fast, { left: "-300px" }, { easing: "ease-in" }));
       });
-
-      let footer_anim = document.querySelector(".footer_anim");
-      scroll(animate(footer_anim, { bottom: "0" }))
-
-      let category = section.querySelector(".category");
-      scroll(animate(category, { width: "30%", opacity: 0, scale: "0", y: "-700px", pointerEvents: "none" }, { easing: "ease-in" }))
-
-      let header_fixed = document.querySelector(".header_fixed");
-      scroll(animate(header_fixed, { opacity: 1, scale: "1" }, { easing: "ease-in" }))
-
-      let header = document.querySelector(".header");
-      scroll(animate(header, { opacity: 1, top: "0" }, { easing: "ease-in" }));
-
-      let anim1 = document.querySelector(".anim1");
-      scroll(animate(anim1, { x: "180vh", y: "-90vh" }, { duration: 200 }));
-
-      let anim2 = document.querySelector(".anim2");
-      scroll(animate(anim2, { x: "100vh", y: "-100vh" }, { easing: "ease-in" }));
-
-      let video_content = document.querySelector(".video_content");
-      scroll(animate(video_content, { scale: "0.3", top: "100px" }, { easing: "ease-in" }));
-
-      let text_outer = document.querySelector(".text_outer");
-      scroll(animate(text_outer, { opacity: 1, top: "50vh" }, { easing: "ease-in" }));
-
-      // let left_anim = document.querySelector(".left_anim");
-      // scroll(animate(left_anim, { left: "-300px" }, { easing: "ease-in" }));
-
-      // let left_anim_fast = document.querySelector(".left_anim_fast");
-      // scroll(animate(left_anim_fast, { left: "-300px" }, { easing: "ease-in" }));
-    });
 
     document.querySelectorAll(".step").forEach((section) => {
       scroll(animate(section, { opacity: 1, }, { easing: "ease-in" }))
@@ -136,8 +149,13 @@ const Home = () => {
       let video_content = document.querySelector(".video_content");
       scroll(animate(video_content, { scale: "1" }, { easing: "ease-in" }));
 
-      let header = document.querySelector(".header");
-      scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
+      if(!isMobile) {
+        let header = document.querySelector(".header");
+        scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
+      } else {
+        let header = document.querySelector(".header");
+        scroll(animate(header, { top: "30px" }, { easing: "ease-in" }));
+      }
 
       let text_outer = document.querySelector(".text_outer");
       scroll(animate(text_outer, { opacity: 1, top: "0" }, { easing: "ease-in" }));
@@ -155,10 +173,13 @@ const Home = () => {
       let video_content = document.querySelector(".video_content");
       scroll(animate(video_content, { scale: "1" }, { easing: "ease-in" }));
 
-      let header = document.querySelector(".header");
-      scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
-
-     
+      if(!isMobile) {
+        let header = document.querySelector(".header");
+        scroll(animate(header, { opacity: 0, top: "100px" }, { easing: "ease-in" }));
+      } else {
+        let header = document.querySelector(".header");
+        scroll(animate(header, { top: "30px" }, { easing: "ease-in" }));
+      }
     });
   }, [])
 
@@ -199,9 +220,9 @@ const Home = () => {
         <header className='header_fixed'>
             <ul>
               <li><Link target="_blank" href="https://optimoml.geopay.ge/index.php">მაღაზია</Link></li>
-              <li><Link target="_blank" href="https://medical.pirveli.ge">მედიქალი</Link></li>
-              <li><Link target="_blank" href="https://vouchers.pirveli.ge">ვაუჩერი</Link></li>
-              <li><Link target="_blank" href="https://lot51.pirveli.ge">გათამაშება</Link></li>
+              <li><Link target="_blank" href="https://medical.pirveli.com">მედიქალი</Link></li>
+              <li><Link target="_blank" href="https://vouchers.pirveli.com">ვაუჩერი</Link></li>
+              <li><Link target="_blank" href="https://lot51.pirveli.com">გათამაშება</Link></li>
               <li><Link target="_blank" href="">თამაშები</Link></li>
               <li><Link target="_blank" href="https://www.figma.com/proto/WUbsCoAXURabJ1LqfqNUnn/GEO--mystery-box?page-id=0%3A1&node-id=2%3A18&viewport=1354%2C-319%2C0.09&scaling=min-zoom&starting-point-node-id=2%3A18">მისტერი ბოქსი</Link></li>
             </ul>
@@ -245,7 +266,7 @@ const Home = () => {
             </ul>
           </nav> */}
 
-          <Link href="https://auth.pirveli.ge/realms/xracoon-demo/protocol/openid-connect/auth?response_type=code&client_id=demo-client&scope=email%20profile%20roles%20openid&state=ozej6dlmtIpneeVt7QoGPy2zXJ9e6BNPdGltyKyn3X4%3D&redirect_uri=https://pirveli.pirveli.ge&nonce=KAmXCp0jHrPiUph9D2p5yVwdpT5g3qWO0iCxqJFbiv0" className="sign">
+          <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?response_type=code&client_id=demo-client&scope=email%20profile%20roles%20openid&state=ozej6dlmtIpneeVt7QoGPy2zXJ9e6BNPdGltyKyn3X4%3D&redirect_uri=https://pirveli.pirveli.com&nonce=KAmXCp0jHrPiUph9D2p5yVwdpT5g3qWO0iCxqJFbiv0" className="sign">
             შესვლა
           </Link>
           <button type="button" className="mobile_menu" onClick={() => setMobile_menu(true)}>
@@ -318,7 +339,7 @@ const Home = () => {
           >
             <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
-            <Link href="https://auth.pirveli.ge/realms/xracoon-demo/login-actions/registration?client_id=demo-client&tab_id=DHhl4MXtCuk">დაწყება</Link>
+            <Link href="https://auth.pirveli.com/realms/xracoon-demo/login-actions/registration?client_id=demo-client&tab_id=DHhl4MXtCuk">დაწყება</Link>
           </article>
 
           <article
@@ -335,19 +356,19 @@ const Home = () => {
                 </Link>
               </li>
               <li>
-                <Link onMouseLeave={() => removeColor("rgba(255, 187, 182, 0)")} onMouseEnter={() => changeColor("rgba(255, 187, 182, 1)", "")} target='_blank' href="https://medical.pirveli.ge">
+                <Link onMouseLeave={() => removeColor("rgba(255, 187, 182, 0)")} onMouseEnter={() => changeColor("rgba(255, 187, 182, 1)", "")} target='_blank' href="https://medical.pirveli.com">
                   მედიქალი
                   <Image src={'/svg/med-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
-                <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.ge">
+                <Link onMouseLeave={() => removeColor("rgba(151, 102, 240, 0)")} onMouseEnter={() => changeColor("rgba(151, 102, 240, 1)", "")} target='_blank' href="https://vouchers.pirveli.com">
                   ვაუჩერი
                   <Image src={'/svg/sale-min.png'} width={226} height={226} alt='' />
                 </Link>
               </li>
               <li>
-                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lot51.pirveli.ge">
+                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://lot51.pirveli.com">
                   გათამაშება
                   <Image src={'/svg/jackpot-min.png'} width={226} height={226} alt='' />
                 </Link>

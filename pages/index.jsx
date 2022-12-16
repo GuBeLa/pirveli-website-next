@@ -338,7 +338,7 @@ if(isMobile) {
                   </div>
                 </div>
               </section>
-              <Link className='mobile_enter' href="#">
+              <Link className='mobile_enter' href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.pirveli.com">
                 შესვლა
               </Link>
             </div>

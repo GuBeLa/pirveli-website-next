@@ -317,24 +317,35 @@ if(isMobile) {
                 </div>
                 <div className='nav_content'>
                   <div className="nav_item">
-                    <Image src="/svg/mobile_shop.svg" height={24} width={24} alt="" />
-                    <h3>მაღაზია</h3>
+                    <Link target="_blank" href="https://shop.pirveli.com">
+                        <Image src="/svg/mobile_shop.svg" height={24} width={24} alt="" />
+                        <h3>მაღაზია</h3>
+                    </Link>
+                  </div>
+                  
+                  <div className="nav_item">
+                    <Link target="_blank" href="https://medical.pirveli.com">
+                      <Image src="/svg/mobile_medical.svg" height={24} width={24} alt="" />
+                      <h3>მედიქალი</h3>
+                    </Link>
                   </div>
                   <div className="nav_item">
-                    <Image src="/svg/mobile_medical.svg" height={24} width={24} alt="" />
-                    <h3>მედიქალი</h3>
+                    <Link target="_blank" href="https://vouchers.pirveli.com">
+                      <Image src="/svg/mobile_voucher.svg" height={24} width={24} alt="" />
+                      <h3>ვაუჩერები</h3>
+                    </Link>
                   </div>
                   <div className="nav_item">
-                    <Image src="/svg/mobile_voucher.svg" height={24} width={24} alt="" />
-                    <h3>ვაუჩერები</h3>
+                    <Link target="_blank" href="https://win.pirveli.com">
+                      <Image src="/svg/mobile_games.svg" height={24} width={24} alt="" />
+                      <h3>გათამაშება</h3>
+                    </Link>
                   </div>
                   <div className="nav_item">
-                    <Image src="/svg/mobile_games.svg" height={24} width={24} alt="" />
-                    <h3>გათამაშება</h3>
-                  </div>
-                  <div className="nav_item">
-                    <Image src="/svg/mobile_game.svg" height={24} width={24} alt="" />
-                    <h3>თამაშები</h3>
+                    <Link target="_blank" href="#">
+                      <Image src="/svg/mobile_game.svg" height={24} width={24} alt="" />
+                      <h3>თამაშები</h3>
+                    </Link>
                   </div>
                 </div>
               </section>

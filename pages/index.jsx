@@ -240,10 +240,10 @@ if(isMobile) {
       >
         <header className='header_fixed'>
             <ul>
-              <li><Link target="_blank" href="https://optimoml.geopay.ge/index.php">მაღაზია</Link></li>
+              <li><Link target="_blank" href="https://shop.pirveli.com">მაღაზია</Link></li>
               <li><Link target="_blank" href="https://medical.pirveli.com">მედიქალი</Link></li>
               <li><Link target="_blank" href="https://vouchers.pirveli.com">ვაუჩერი</Link></li>
-              <li><Link target="_blank" href="http://win.pirveli.com">გათამაშება</Link></li>
+              <li><Link target="_blank" href="https://win.pirveli.com">გათამაშება</Link></li>
               <li><Link target="_blank" href="">თამაშები</Link></li>
               <li><Link target="_blank" href="https://www.figma.com/proto/WUbsCoAXURabJ1LqfqNUnn/GEO--mystery-box?page-id=0%3A1&node-id=2%3A18&viewport=1354%2C-319%2C0.09&scaling=min-zoom&starting-point-node-id=2%3A18">მისტერი ბოქსი</Link></li>
             </ul>
@@ -287,7 +287,7 @@ if(isMobile) {
             </ul>
           </nav> */}
 
-          <Link href="https://auth.pirveli.com/" className="sign">
+          <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=d[…]pe=code&scope=email&redirect_uri=https://pirveli.pirveli.com" className="sign">
             შესვლა
           </Link>
           <button type="button" className="mobile_menu" onClick={() => setMobile_menu(true)}>
@@ -360,7 +360,7 @@ if(isMobile) {
           >
             <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
-            <Link href="https://auth.pirveli.com/">დაწყება</Link>
+            <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=d[…]pe=code&scope=email&redirect_uri=https://pirveli.pirveli.com">დაწყება</Link>
           </article>
 
           <article
@@ -371,7 +371,7 @@ if(isMobile) {
           >
             <ul>
               <li>
-                <Link ref={linkRef} onMouseLeave={() => removeColor("rgba(93, 176, 57, 0)")} onMouseEnter={() => changeColor("rgba(93, 176, 57, 1)", "")} target='_blank' href="https://optimoml.geopay.ge/index.php">
+                <Link ref={linkRef} onMouseLeave={() => removeColor("rgba(93, 176, 57, 0)")} onMouseEnter={() => changeColor("rgba(93, 176, 57, 1)", "")} target='_blank' href="https://shop.pirveli.com">
                   მაღაზია
                   <Image src={'/svg/shop-min.png'} width={226} height={226} alt='' />
                 </Link>
@@ -389,7 +389,7 @@ if(isMobile) {
                 </Link>
               </li>
               <li>
-                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="http://win.pirveli.com">
+                <Link onMouseLeave={() => removeColor("rgba(219, 0, 96, 0)")} onMouseEnter={() => changeColor("rgba(219, 0, 96, 1)", "")} target='_blank' href="https://win.pirveli.com">
                   გათამაშება
                   <Image src={'/svg/jackpot-min.png'} width={226} height={226} alt='' />
                 </Link>

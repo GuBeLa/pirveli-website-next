@@ -287,7 +287,7 @@ if(isMobile) {
             </ul>
           </nav> */}
 
-          <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.pirveli.com" className="sign">
+          <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/registrations?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.com" className="sign">
             შესვლა
           </Link>
           <button type="button" className="mobile_menu" onClick={() => setMobile_menu(true)}>
@@ -349,7 +349,7 @@ if(isMobile) {
                   </div>
                 </div>
               </section>
-              <Link className='mobile_enter' href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.pirveli.com">
+              <Link className='mobile_enter' href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/registrations?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.com">
                 შესვლა
               </Link>
             </div>
@@ -371,7 +371,7 @@ if(isMobile) {
           >
             <h2>დააგროვე და გადაცვალე <span>მონეტები</span></h2>
             <p>აღმოაჩინე ახალი რეალობა, სადაც ყოველთვის მოგებული დარჩები!</p>
-            <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/auth?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.pirveli.com">დაწყება</Link>
+            <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/registrations?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.com">დაწყება</Link>
           </article>
 
           <article

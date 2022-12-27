@@ -10,33 +10,36 @@ const Home = () => {
   const linkRef = useRef();
   const [mobile_menu, setMobile_menu] = useState(false)
 
+  const [auth, setAuth] = useState(null)
+  const [isLoading, setLoading] = useState(false)
+
   useEffect(() => {
-    // window.addEventListener('touchstart', function(event){
-    //   let startX = event.touches[0].clientX;
-    //   let startY = event.touches[0].clientY;
-    //   console.log(startX);
-    // })
-     
-    //  window.addEventListener('touchend', function(event){
-    //   //console.log(event);
-    //   let endX = event.changedTouches[0].clientX;
-    //   let endY = event.changedTouches[0].clientY;
-    //   // handleTouch(startX, endX, left, right)
-      
-    // })
+    setLoading(true)
+    fetch('https://pirveli.com/api/racoon-transactions/user')
+      .then((res) => res.json())
+      .then(() => {
+        setAuth(true)
+        setLoading(false)
+      })
+      .catch((error) => {
+        setAuth(false)
+        console.log(error)
+      })
+  }, [])
 
-  if(isMobile) {
-    document.querySelector('.info').style.height = `${window.innerHeight}px`;
-    document.querySelector('.category').style.height = `${window.innerHeight}px`;
-    document.querySelector('.text_list').style.height = `${window.innerHeight}px`;
-    document.querySelector('.video_content').style.height = `${window.innerHeight - 200}px`;
-  }
+  useEffect(() => {
+    if(isMobile) {
+      document.querySelector('.info').style.height = `${window.innerHeight}px`;
+      document.querySelector('.category').style.height = `${window.innerHeight}px`;
+      document.querySelector('.text_list').style.height = `${window.innerHeight}px`;
+      document.querySelector('.video_content').style.height = `${window.innerHeight - 200}px`;
+    }
 
-  (function(d, w, s) {
-      var widgetHash = '6RbjV9Nq9riHUTrKPbFJ', bch = d.createElement(s); bch.type = 'text/javascript'; bch.async = true;
-      bch.src = '//widgets.binotel.com/chat/widgets/' + widgetHash + '.js';
-      var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bch, sn);
-  })(document, window, 'script');
+    (function(d, w, s) {
+        var widgetHash = '6RbjV9Nq9riHUTrKPbFJ', bch = d.createElement(s); bch.type = 'text/javascript'; bch.async = true;
+        bch.src = '//widgets.binotel.com/chat/widgets/' + widgetHash + '.js';
+        var sn = d.getElementsByTagName(s)[0]; sn.parentNode.insertBefore(bch, sn);
+    })(document, window, 'script');
 
     const blocks = document.querySelectorAll(".mobile_swipe"),
     sectionHeight = window.innerHeight;
@@ -51,42 +54,10 @@ const Home = () => {
         arrSections.push(sectionHeight * i);
     }
 
-    // document.addEventListener('keydown', (event) => {
-    //   event.preventDefault()
-    //   var name = event.key;
-    //   var code = event.code;
-    //   // Alert the key name and key code on keydown
-    //   if (inScroll === false) {
-    //     inScroll = true;
-    //     //move down
-    //     if (code == "ArrowDown") {
-    //         step >= arrSections.length - 1 ? step = arrSections.length - 1 : step = step + 1;
-    //         window.scrollTo({
-    //             top: arrSections[step],
-    //             behavior: "smooth"
-    //         });
-    //         setTimeout(() => { inScroll = false }, durationOneScroll);
-    //     } else {
-    //         //move up
-    //         step === 0 ? step = 0 : step = step - 1;
-    //         window.scrollTo({
-    //             top: arrSections[step],
-    //             behavior: "smooth"
-    //         });
-    //         setTimeout(() => { inScroll = false }, durationOneScroll);
-    //     }
-    // }
-    // }, false);
-
 //one page scroll by mouse wheel
 if(isMobile) {
     var lastPoint = null;
     document.addEventListener("touchstart", function (event) {
-      console.log(event)
-      // event.preventDefault();
-      // if (event.touches.length > 1 || (event.type === "touchstart" && event.touches.length > 0))
-      //   return;
-        
         if (inScroll === false) {
             inScroll = true;
             //move down
@@ -111,14 +82,6 @@ if(isMobile) {
         lastPoint = currentPoint;
       }, {passive:false});
   }
-
-    // document.querySelectorAll("section > div").forEach((item) => {
-    //   scroll(animate(item, { opacity: [0, 1, 1, 0] }), {
-    //     target: item,
-    //     offset: ["start end", "end end", "start start", "end start"]
-    //   });
-    // });
-    
 
       document.querySelectorAll(".main").forEach((section) => {
         if(!isMobile) {
@@ -157,11 +120,6 @@ if(isMobile) {
         let text_outer = document.querySelector(".text_outer");
         scroll(animate(text_outer, { opacity: 1, top: "50vh" }, { easing: "ease-in" }));
   
-        // let left_anim = document.querySelector(".left_anim");
-        // scroll(animate(left_anim, { left: "-300px" }, { easing: "ease-in" }));
-  
-        // let left_anim_fast = document.querySelector(".left_anim_fast");
-        // scroll(animate(left_anim_fast, { left: "-300px" }, { easing: "ease-in" }));
       });
 
     document.querySelectorAll(".step").forEach((section) => {
@@ -222,6 +180,8 @@ if(isMobile) {
     `;
   }
 
+  console.log(auth);
+
   return (
     <>
       <Head>
@@ -257,38 +217,9 @@ if(isMobile) {
             <Image width={175} height={50} src="/svg/logo.svg" alt="" />
           </Link>
 
-          {/* <nav className='nav'>
-            <ul>
-              <li>
-                <Link href="#" target="_blank">
-                  E-commerce
-                </Link>
-              </li>
-              <li>
-                <Link href="#" target="_blank">
-                  Medical
-                </Link>
-              </li>
-              <li>
-                <Link href="#" target="_blank">
-                  Voucher
-                </Link>
-              </li>
-              <li>
-                <Link href="#" target="_blank">
-                  Raffles
-                </Link>
-              </li>
-              <li>
-                <Link href="#" target="_blank">
-                  Games
-                </Link>
-              </li>
-            </ul>
-          </nav> */}
 
           <Link href="https://auth.pirveli.com/realms/xracoon-demo/protocol/openid-connect/registrations?client_id=demo-client&response_type=code&scope=email&redirect_uri=https://pirveli.com" className="sign">
-            შესვლა
+            {auth ? 'პროფილი' : 'შესვლა'}
           </Link>
           <button type="button" className="mobile_menu" onClick={() => setMobile_menu(true)}>
             <Image src="/svg/mobile_menu.svg" alt="" width={24} height={24} />
@@ -413,100 +344,8 @@ if(isMobile) {
               </li>
             </ul>
           </article>
-
-          {/* <Link href="#" className="scroll_down">
-            <Image width={140} height={140} src="/svg/scroll.svg" alt="" />
-          </Link> */}
           <div className="anim1"></div>
         </section>
-
-        {/* <section className="section about">
-          <div className="wrapper">
-            <article className="img">
-              <Image width={520} height={563} src="/svg/about.svg" alt="" />
-            </article>
-            <article className="text">
-              <h2>About Us</h2>
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industrys standard dummy
-                text ever since the 1500s
-              </p>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text. It has roots in a piece of classNameical Latin literature
-                from 45 BC, making it over 2000 years old. Richard McClintock, a
-                Latin professor at Hampden-Sydney College in Virginia, looked up
-                one of the more obscure Latin words, consectetur, from a Lorem
-                Ipsum passage, and going through the cites of the word in
-                classNameical literature, discovered the undoubtable source.
-                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de
-                Finibus Bonorum et Malorum (The Extremes of Good and Evil) by
-                Cicero, written in 45 BC. This book is a treatise on the theory
-                of ethics, very popular during the Renaissance. The first line
-                of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes from a
-                line in section 1.10.32.
-              </p>
-              <p>
-                The standard chunk of Lorem Ipsum used since the 1500s is
-                reproduced below for those interested. Sections 1.10.32 and
-                1.10.33 from de Finibus Bonorum et Malorum by Cicero are also
-                reproduced in their exact original form, accompanied by English
-                versions from the 1914 translation by H. Rackham.
-              </p>
-              <Link href="#">
-                Learn More{' '}
-                <Image width={40} height={40} src="/svg/more.svg" alt="more" />
-              </Link>
-            </article>
-          </div>
-        </section> */}
-
-        {/* <section className="section why">
-          <h2>Why Our Company</h2>
-          <div className="content">
-            <div className="item">
-              <div className="why_outer">
-                <span>01</span>
-                <h2>Comfortable</h2>
-                <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-              <div className="why_outer">
-                <span>02</span>
-                <h2>Quality</h2>
-                <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-              <div className="why_outer">
-                <span>03</span>
-                <h2>Affordable</h2>
-                <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-            </div>
-            <div className="item">
-              <Image width={629} height={740} src="/svg/company.svg" alt="" />
-            </div>
-            <div className="item">
-              <div className="why_outer">
-                <span>04</span>
-                <h2>Cheap</h2>
-                <p>
-                  The standard chunk of Lorem Ipsum used since the 1500s is
-                  reproduced below for those interested.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className="section step">
           <div className="text_list mobile_swipe">
             <h2 className='left_anim'>ლოიალურობაზე დაფუძნებული</h2>
@@ -613,53 +452,23 @@ if(isMobile) {
           </div>
         </section>
 
-        {/* <section className="section footer">
-          <div className="container">
-            <div className="text_content">
-              <h2>Footer Name</h2>
-
-              <div className="list_outer">
-                <div className="list_inner">
-                  <h2>Company</h2>
-                  <div className="list">
-                    <Link href="">About us</Link>
-                    <Link href="">How it Works</Link>
-                    <Link href="">Contact Us</Link>
-                    <Link href="">Terms & Conditions</Link>
-                    <Link href="">Privacy Policy</Link>
-                    <Link href="">Bonus Points</Link>
-                  </div>
-                </div>
-                <div className="list_inner">
-                  <h2>Quick Links</h2>
-                  <div className="list">
-                    <Link href="">E_commerce</Link>
-                    <Link href="">Vouchers</Link>
-                    <Link href="">Medical</Link>
-                    <Link href="">Raffles</Link>
-                    <Link href="">Games</Link>
-                  </div>
-                </div>
-                <div className="list_inner">
-                  <h2>Social</h2>
-                  <div className="list">
-                    <Link href="">Facebook</Link>
-                    <Link href="">Instagram</Link>
-                    <Link href="">Youtube</Link>
-                    <Link href="">Linkedin</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="img_content">
-              <Image width={620} height={636} src="/svg/footer.svg" alt="" />
-            </div>
-          </div>
-          <p>Copyright © 2022 our website. All rights reserved.</p>
-        </section> */}
+      
       </main>
     </>
   );
 };
+
+// export async function getServerSideProps() {
+//   await fetch(`https://pirveli.com/api/racoon-transactions/user`).then(async (data) => { 
+//     const response = await data.json()
+
+//     return { props: { response } }
+//   })
+//   .catch((err) => {
+//     return { props: { err } }
+//   });
+  
+// }
+
 export default Home;
+
